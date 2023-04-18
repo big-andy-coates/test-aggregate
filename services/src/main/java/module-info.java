@@ -18,4 +18,7 @@ module test.aggregate.services {
     requires transitive test.aggregate.api;
 
     exports io.github.big.andy.coates.test.aggregate.services;
+
+    provides org.creekservice.api.platform.metadata.ComponentDescriptor with
+            io.github.big.andy.coates.test.aggregate.services.HandleOccurrenceServiceDescriptor;
 }

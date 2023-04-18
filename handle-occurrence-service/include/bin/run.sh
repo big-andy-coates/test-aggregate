@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # Copyright 2022-2023 Creek Contributors (https://github.com/creek-service)
 #
@@ -14,5 +16,8 @@
 # limitations under the License.
 #
 
-
-io.github.big.andy.coates.test.aggregate.services.HandleOccurrenceServiceDescriptor
+exec java \
+ -Xms64m -Xmx256m \
+ -Dlog4j.configurationFile=/log/log4j2.xml \
+ --module-path "/opt/creek/service/lib" \
+ --module test.aggregate.handle.occurrence.service/io.github.big.andy.coates.test.aggregate.handle.occurrence.service.ServiceMain

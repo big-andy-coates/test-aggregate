@@ -17,6 +17,7 @@
 rootProject.name = "test-aggregate"
 
 include(
+    "handle-occurrence-service",
     "api",
     "services",
     "system-tests"

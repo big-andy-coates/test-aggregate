@@ -1,0 +1,34 @@
+# A Workflow for bootstrapping repos created from this template.
+
+name: Bootstrap
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  boostrap:
+    if: ${{ github.run_number == 1 }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+      - name: Install zsh
+        run: sudo apt install zsh
+      - name: Run script
+        shell: zsh {0}
+        run: ./.creek/bootstrap.sh "${{ github.repository }}" "${{ github.repository_owner }}"
+      - name: Format code
+        run: ./gradlew format
+      - name: Commit changes
+        run: |
+          git config --global user.email "95620007+Creek-Bot@users.noreply.github.com"
+          git config --global user.name "Creek Bot"
+          git add -A
+          git status
+          git commit -m "Bootstrap repo"
+          git push

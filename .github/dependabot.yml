@@ -15,8 +15,3 @@ updates:
     open-pull-requests-limit: 50
     schedule:
       interval: daily
-  - package-ecosystem: "docker" # init:remove
-    directory: /example-service # init:remove
-    open-pull-requests-limit: 50 # init:remove
-    schedule: # init:remove
-      interval: daily # init:remove

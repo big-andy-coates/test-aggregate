@@ -34,7 +34,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-group = "org.creekservice"
+group = "io.github.big.andy.coates"
 
 java {
     toolchain {

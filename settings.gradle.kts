@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-rootProject.name = "aggregate-template"
+rootProject.name = "test-aggregate"
 
 include(
     "api",
-    "example-service",  // init:remove
     "services",
     "system-tests"
 )

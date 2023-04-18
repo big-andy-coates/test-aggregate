@@ -14,13 +14,8 @@
  * limitations under the License.
  */
 
-import org.creekservice.api.platform.metadata.ComponentDescriptor;
+module test.aggregate.services {
+    requires transitive test.aggregate.api;
 
-module example.mod.services {
-    requires transitive example.mod.api;
-
-    exports org.acme.example.services;
-
-    provides ComponentDescriptor with // init:remove
-            org.acme.example.services.ExampleServiceDescriptor; // init:remove
+    exports io.github.big.andy.coates.test.aggregate.services;
 }

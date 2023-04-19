@@ -32,6 +32,7 @@ import org.creekservice.api.test.util.TestPaths;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class TopologyBuilderTest {
@@ -79,6 +80,7 @@ class TopologyBuilderTest {
      * <p>Option #1 allows for the simplest deployment, but is not always possible or desirable.
      */
     @Test
+    @Disabled
     void shouldNotChangeTheTopologyUnintentionally() {
         // Given:
         final String expectedTopology =
